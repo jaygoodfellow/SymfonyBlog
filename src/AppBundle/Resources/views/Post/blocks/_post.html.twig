@@ -1,0 +1,6 @@
+<h1>{{post.title}}</h1>
+<h4>{{post.user.fullName}}</h4>
+<h5>{{post.publishDate|date("Y-m-d")}}</h5>
+<article>
+{{post.body|raw}}
+</article>

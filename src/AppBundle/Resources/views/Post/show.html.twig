@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Blog Post{% endblock %}
+
+{% block body %}
+<a href="{{ path('homepage')}}">Return to blog</a>
+{% include "AppBundle:Post:/blocks/_post.html.twig" with {post: post} %}
+
+<h2>Comments</h2>
+{% if comments  %}
+  {% for comment in comments %}
+    {% include "AppBundle:Post:/blocks/_comment.html.twig" with {comment: comment} %}
+  {% endfor %}
+{% endif %}
+
+{% if not comments and post.allowComments %}
+   No comments
+{% endif %}
+
+{% if not post.allowComments %}
+   Comments are disabled
+{% else %}
+  {# Add a form block #}
+{% endif %}
+
+{% endblock %}

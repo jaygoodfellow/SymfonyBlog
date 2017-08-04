@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link href="{{ asset('build/appcss.css') }}" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="row content">
+          <div class="col-sm-12">
+        {% block body %}{% endblock %}
+          </div>
+        </div>
+        <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-pills nav-justified">
+                <li>© 2017</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+      </div>
+        <script src="{{ asset('build/appjs.js') }}"></script>
+    </body>
+</html>

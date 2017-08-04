@@ -1,0 +1,23 @@
+AppBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        email:
+            type: string
+            length: 255
+            unique: true
+        fullName:
+            type: string
+            length: 255
+        dateCreated:
+            type: datetime
+        dateUpdated:
+            type: datetime
+    lifecycleCallbacks: {  }

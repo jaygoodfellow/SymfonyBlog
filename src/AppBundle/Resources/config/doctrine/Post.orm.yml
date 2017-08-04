@@ -1,0 +1,37 @@
+AppBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+        body:
+            type: text
+        published:
+            type: boolean
+        publishDate:
+            type: datetime
+        allowComments:
+            type: boolean
+        dateCreated:
+            type: datetime
+        dateUpdated:
+            type: datetime
+    manyToOne:
+      user:
+        targetEntity: User
+        joinColumn:
+          name: user_id
+          referencedColumnName: id
+
+    lifecycleCallbacks: {  }
